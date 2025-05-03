@@ -6,11 +6,9 @@ import Image from "next/image"
 import Link from "next/link"
 import { Search, ShoppingCart, Download } from "lucide-react"
 import { useState } from "react"
-import { useRouter } from "next/navigation"
 
 export default function UdemyCertificatePage() {
   const [searchQuery, setSearchQuery] = useState("")
-  const router = useRouter()
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault()
@@ -43,13 +41,13 @@ export default function UdemyCertificatePage() {
     <div className="min-h-screen flex flex-col">
       {/* Navigation Bar */}
       <header className="py-2 px-4 sticky top-0 bg-white shadow-[0_4px_6px_-2px_rgba(128,128,128,0.3)] z-10">
-        <div className="flex items-center justify-between w-full px-0 max-w-screen-4xl mx-auto ">
-          <div className="flex items-center gap-8 flex-1 ">
+        <div className="flex items-center justify-between w-full px-0 max-w-screen-4xl mx-auto">
+          <div className="flex items-center gap-8 flex-1">
             <Link href="https://www.udemy.com/" className="mr-2">
-              <Image src="/udemy-logo-big.o.png" alt="Udemy" width={91} height={34} className="h-14 w-auto" />
+              <Image src="/udemy-logo-big.o.png" alt="Udemy" width={91} height={34} className="h-14 w-auto" priority />
             </Link>
             <button className="text-sm font-medium hover:text-purple-600">Explore</button>
-            <div className="relative flex-1 max-w-6xl ">
+            <div className="relative flex-1 max-w-6xl">
               <form onSubmit={handleSearch} className="w-full">
                 <div className="flex items-center border border-gray-300 rounded-full px-3 py-2 bg-gray-15 w-full">
                   <Search className="h-6 w-4 text-gray-500 mr-2 flex-shrink-0" />
@@ -67,7 +65,7 @@ export default function UdemyCertificatePage() {
               </form>
             </div>
           </div>
-          <div className="flex items-center gap-3 text-sm ml-4 ">
+          <div className="flex items-center gap-3 text-sm ml-4">
             <Link
               href="https://www.udemy.com/pricing/"
               className="hidden md:block hover:text-purple-600 whitespace-nowrap"
@@ -122,6 +120,7 @@ export default function UdemyCertificatePage() {
                 height={900}
                 className="w-full h-auto"
                 priority
+                unoptimized
               />
             </div>
 
@@ -163,7 +162,8 @@ export default function UdemyCertificatePage() {
                   alt="The Complete Full-Stack Web Development Bootcamp"
                   width={330}
                   height={205}
-                  className="rounded-md bg-green-200"
+                  className="rounded-md w-full"
+                  unoptimized
                 />
               </Link>
               <Link

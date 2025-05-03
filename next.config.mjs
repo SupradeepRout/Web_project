@@ -7,8 +7,16 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'assets.bitdegree.org',
+        pathname: '/**',
+      },
+    ],
     unoptimized: true,
   },
-}
+  output: 'standalone',
+};
 
-export default nextConfig
+export default nextConfig;
