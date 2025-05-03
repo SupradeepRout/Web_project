@@ -8,8 +8,8 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Udemy Certificate - The Complete Full-Stack Web Development Bootcamp",
   description: "Certificate of completion for The Complete Full-Stack Web Development Bootcamp",
-   icons: {
-    icon: "" // ✅ path from the public folder
+  icons: {
+    icon: "/favicon.webp", // Updated path to the favicon
   },
     generator: 'v0.dev'
 }

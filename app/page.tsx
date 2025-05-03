@@ -4,7 +4,7 @@ import type React from "react"
 
 import Image from "next/image"
 import Link from "next/link"
-import { Search, ShoppingCart, Download, HelpCircle } from "lucide-react"
+import { Search, ShoppingCart, Download } from "lucide-react"
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 
@@ -15,7 +15,7 @@ export default function UdemyCertificatePage() {
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault()
     if (searchQuery.trim()) {
-      router.push(`https://www.udemy.com/courses/search/?q=${encodeURIComponent(searchQuery)}`)
+      window.location.href = `https://www.udemy.com/courses/search/?q=${encodeURIComponent(searchQuery)}`
     }
   }
 
@@ -46,7 +46,7 @@ export default function UdemyCertificatePage() {
         <div className="flex items-center justify-between w-full px-0 max-w-screen-4xl mx-auto ">
           <div className="flex items-center gap-8 flex-1 ">
             <Link href="https://www.udemy.com/" className="mr-2">
-              <Image src="https://assets.bitdegree.org/online-learning-platforms/storage/media/udemy-logo-big.o.png" alt="Udemy" width={11} height={9} className="h-14 w-auto" />
+              <Image src="/udemy-logo-big.o.png" alt="Udemy" width={91} height={34} className="h-14 w-auto" />
             </Link>
             <button className="text-sm font-medium hover:text-purple-600">Explore</button>
             <div className="relative flex-1 max-w-6xl ">
